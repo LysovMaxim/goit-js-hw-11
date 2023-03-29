@@ -1,0 +1,11 @@
+
+.header {
+  background-color: aqua;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+
+.search-form {
+display: flex;
+justify-content: center;   
+}
