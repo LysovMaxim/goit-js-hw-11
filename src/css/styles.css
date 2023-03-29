@@ -9,3 +9,23 @@
 display: flex;
 justify-content: center;   
 }
+
+.input{
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-submit{
+  margin-left: 10px;
+  background-color: #FFFFFF;
+  color: rgb(109, 115, 115);
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 400;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn-submit:hover{
+  background-color: antiquewhite;
+}
