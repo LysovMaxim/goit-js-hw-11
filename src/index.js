@@ -61,16 +61,16 @@ function makePhoto(arrayPhoto) {
   <img src="${webformatURL}" alt="${tags}" loading="lazy" width="300px"height="300px"/>
   <div class="info">
     <p class="info-item">
-      <b>likes ${likes}</b>
+      <b>likes: ${likes}</b>
     </p>
     <p class="info-item">
-      <b>views ${views}</b>
+      <b>views: ${views}</b>
     </p>
     <p class="info-item">
-      <b>comments ${comments}</b>
+      <b>comments: ${comments}</b>
     </p>
     <p class="info-item">
-      <b>downloads ${downloads}</b>
+      <b>downloads: ${downloads}</b>
     </p>
   </div>
 </div>`;
