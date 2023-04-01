@@ -36,7 +36,7 @@ console.log(total)
     galleryEl.innerHTML = makePhoto(arrayPhoto);
       if (data.totalHits === 0) {
         loadMoreEl.classList.add('is-hidden');
-      return Notiflix.Notify.warning(
+      return Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
     } else if (data.totalHits < unsplashAPI.perPage || data.totalHits === 0) {
