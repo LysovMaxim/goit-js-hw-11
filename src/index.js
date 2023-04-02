@@ -133,7 +133,7 @@ function messageHowManyPicturesFound(data) {
 function messageThatNoMoreImagesFound() {
         galleryEl.insertAdjacentHTML(
         'beforeend',
-        `"We're sorry, but you've reached the end of search results."`
+        `<div class="message">"We're sorry, but you've reached the end of search results."</div>`
       )
 };
 function messageNothingFound() {
