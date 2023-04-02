@@ -1,4 +1,8 @@
 .header {
+position: fixed;
+width: 100%;
+padding-top: 10px;
+padding-bottom: 10px;
   background-color: rgb(255, 115, 15);
   padding-top: 24px;
   padding-bottom: 25px;
@@ -57,6 +61,7 @@
 }
 
 .gallery {
+  padding-top: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
