@@ -5,13 +5,9 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const formEl = document.querySelector('.search-form');
-console.log(formEl);
 const inputEl = document.querySelector('.input');
-console.log(inputEl);
 const galleryEl = document.querySelector('.gallery');
-console.log(galleryEl);
 const loadMoreEl = document.querySelector('.load-more');
-console.log(loadMoreEl);
 
 const unsplashAPI = new MakeAPI();
 
@@ -26,7 +22,7 @@ async function handleSubmit(event) {
   total = 0;
 
   total += unsplashAPI.perPage;
-  console.log(total);
+
   if (inputEl.value === '') {
     return;
   }
@@ -36,7 +32,7 @@ async function handleSubmit(event) {
 
   try {
     const { data } = await unsplashAPI.fetchPhoto();
-    console.log(data);
+
     const arrayPhoto = data.hits;
 
     galleryEl.innerHTML = makePhoto(arrayPhoto);
@@ -47,17 +43,15 @@ async function handleSubmit(event) {
     }).refresh();
     if (data.totalHits != 0) {
       messageHowManyPicturesFound(data);
-    };
-     if (data.totalHits === 0) {
+    }
+    if (data.totalHits === 0) {
       loadMoreEl.classList.add('is-hidden');
-       return messageNothingFound();
-       
+      return messageNothingFound();
     } else if (data.totalHits < unsplashAPI.perPage || data.totalHits === 0) {
       loadMoreEl.classList.add('is-hidden');
       messageThatNoMoreImagesFound();
       return;
-    };
-
+    }
 
     loadMoreEl.classList.remove('is-hidden');
   } catch (error) {
@@ -73,7 +67,7 @@ async function handleloadMore() {
     const { data } = await unsplashAPI.fetchPhoto();
 
     total += unsplashAPI.perPage;
-    console.log(total);
+
     const arrayPhoto = data.hits;
 
     galleryEl.insertAdjacentHTML('beforeend', makePhoto(arrayPhoto));
@@ -129,15 +123,15 @@ function makePhoto(arrayPhoto) {
 
 function messageHowManyPicturesFound(data) {
   Notiflix.Notify.success(`"Hooray! We found ${data.totalHits} images."`);
-};
+}
 function messageThatNoMoreImagesFound() {
-        galleryEl.insertAdjacentHTML(
-        'beforeend',
-        `<div class="message">"We're sorry, but you've reached the end of search results."</div>`
-      )
-};
+  galleryEl.insertAdjacentHTML(
+    'beforeend',
+    `<div class="message">"We're sorry, but you've reached the end of search results."</div>`
+  );
+}
 function messageNothingFound() {
   Notiflix.Notify.failure(
-        'Sorry, there are no images matching your search query. Please try again.'
-      );
+    'Sorry, there are no images matching your search query. Please try again.'
+  );
 }
